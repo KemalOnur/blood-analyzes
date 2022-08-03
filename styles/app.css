@@ -2,16 +2,28 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 * { margin:0; padding:0 ; font-family: roboto;}
 
-.logos{
-    margin-top: 100px;
+
+#main-header
+{
+    height: 80px;
+    background-color: rgb(47, 48, 52);  ;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
 }
-h1 { 
-    background: #4db6ac; 
-    color: white; 
-    text-align: center;
-    padding: 60px;
-    font-weight: normal;
-    
+#main-header-left
+{
+    padding-left: 5%;
+    width: 30%;
+    background-color: rgb(47, 48, 52);  ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#main-header-left
+{
+    padding-right: 5%;
 }
 
 table { border-collapse: collapse; margin: 20px auto ;}

@@ -78,8 +78,16 @@
     
 </head>
 <body>
+<div id="main-header">
+    <div id="main-header-left">
+        <img src="./images/LogoBeyaz.png" alt="petbilir-logo" height="50" width="200">
+        <h1>Kan Tahlilleri</h1>
+    </div>
+    <div id="main-header-right">
+    <p>Prestige Veteriner Tıp Merkezi için hazırlanmıştır.</p>
+    </div>
+</div>
 
-<h1>Kan Tahlilleri</h1>
     <form action="?" method="post">
  
     <table>
