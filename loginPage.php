@@ -17,7 +17,7 @@
                 exit ;
             }
         }
-        echo "<p class='alert'>Şifre veya kullanıcı adı hatalı</p>" ;
+        echo '<script> alert("Kullanıcı Adı veya Parola Hatalı"); </script>';
     }
     // auto login
   if ( validSession()) {
