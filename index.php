@@ -119,26 +119,35 @@
                     echo '</tr>' ;
                 }
 
-                ?>    
-            <tr>
-                <td colspan="5">Kullanıcı Sayısı: <?= $rs->rowCount()-1 ?></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input class="input-data" type="text" name="id" placeholder="Kullanıcı ID"></td>
-                <td><input class="input-data" type="text" name="nameSurname" placeholder="Kullanıcı Ad Soyad"></td>
-                <td><input class="input-data" type="text" name="petName" placeholder="Hayvanın Adı"></td>
-                <td>
-                    <button type="submit" class="add-user-btn" title="Add">
+                ?>  
+    </table>  
+            
+                <div class = "user-count"> Kullanıcı Sayısı : <?= $rs->rowCount()-1 ?> </div>
+
+            <div class="new-input-section">
+                <div class="new-input-container">
+                    <div>
+                        <input class="input-area" type="text" name="id" placeholder="Kullanıcı ID">
+                    </div>
+                    <div>
+                        <input class="input-area" type="text" name="nameSurname" placeholder="Kullanıcı Ad Soyad">
+                    </div>
+                    <div>
+                        <input class="input-area" type="text" name="petName" placeholder="Hayvan Ad Soyad">
+                    </div>
+                </div>
+                <div class="add-data-container">
+                    <button type="submit" class="add-button" title="Add">
                         Kullanıcı Ekle
                     </button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a class="btn" href="logout.php">Çıkış Yap</a>
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-left-container"><img src="#" alt="prestige-logo"> </div>
+                <div class="footer-right-container">
+                    <a class="exit-button" href="logout.php">Çıkış Yap</a>
+                </div>
+            </footer>
     </form>
     </div>
     <?php
