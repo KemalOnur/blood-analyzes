@@ -97,19 +97,22 @@
                 <th>Kullanıcı Adı Soyadı</th>
                 <th>Hayvan Ad</th>
             </tr>
-            <?php foreach( $users as $user) : ?>
+            <?php
+                for($i = 0;$i<count($users)-1;$i++){
+                    echo '<tr class = "data-row">' ;
+                    echo '<td class="data">' . $users[$i]["id"] . '</td>' ;
+                    echo '<td class="data">' . $users[$i]["petName"] . '</td>' ;
+                    echo '<td class="data">' . $users[$i]["nameSurname"] . '</td>' ;
+                    echo '<td class="action">' ;
+                    echo '<a class="delete-btn" href="?delete=' . $users[$i]["id"] .  'title="Delete"><i class="fa-solid fa-trash-can"></i></a>'; 
+                    echo ' <a class="edit-btn" href="edit.php?id=' . $users[$i]["id"] . 'title="Edit"><i class="fa-solid fa-pen"></i></i></a>' ;
+                    echo '</td>' ;
+                    echo '</tr>' ;
+                }
+
+                ?>    
             <tr>
-                <td><?= $user["id"] ?></td>
-                <td><?= $user["nameSurname"] ?></td>
-                <td><?= $user["petName"] ?></td>
-                <td>
-                    <a class="btn" href="?delete=<?= $user["id"] ?>" title="Delete"><i class="fa-solid fa-trash-can"></i></a>
-                    <a class="btn" href="edit.php?id=<?= $user["id"] ?>" title="Edit"><i class="fa-solid fa-pen"></i></i></a>
-                </td>
-            </tr>
-            <?php endforeach ?>    
-            <tr>
-                <td colspan="5">Kullanıcı Sayısı: <?= $rs->rowCount() ?></td>
+                <td colspan="5">Kullanıcı Sayısı: <?= $rs->rowCount()-1 ?></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="text" name="id" placeholder="Kullanıcı ID"></td>
