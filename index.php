@@ -101,10 +101,10 @@
     <form class="form-section" action="?" method="post">
         <table>
             <tr class="table-row-header">
-                <th>🆔 Kullanıcı ID</th>
-                <th>🧑 Kullanıcı Adı Soyadı</th>
-                <th>🐾 Hayvanın Adı</th>
-                <th>⏏️ Eylemler</th>
+                <th>Kullanıcı ID</th>
+                <th>Kullanıcı Adı Soyadı</th>
+                <th>Hayvanın Adı</th>
+                <th>Eylemler</th>
             </tr>
             <?php
                 for($i = 0;$i<count($users)-1;$i++){
@@ -123,7 +123,6 @@
     </table>  
             
                 <div class = "user-count"> Kullanıcı Sayısı : <?= $rs->rowCount()-1 ?> </div>
-
             <div class="new-input-section">
                 <div class="new-input-container">
                     <div>
@@ -141,15 +140,16 @@
                         Kullanıcı Ekle
                     </button>
                 </div>
-            </div>
-            <footer>
-                <div class="footer-left-container"><img src="#" alt="prestige-logo"> </div>
                 <div class="footer-right-container">
                     <a class="exit-button" href="logout.php">Çıkış Yap</a>
                 </div>
-            </footer>
+            </div>
+            
     </form>
     </div>
+    <footer>
+                <div class="footer-container"><img src="#" alt="prestige-logo"> </div>
+    </footer>
     <?php
        if ( isset($msg)) {
            echo "<p class='msg'>" , $msg, "</p>" ;
