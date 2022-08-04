@@ -4,6 +4,7 @@
     if ( !empty($_POST)) {
         extract($_POST) ;
         if ( checkUser($id, $pass) ) {
+            echo '<style>#wrong-password {display:none;margin-bottom: 5%;padding: 5%;width: 280px;font-family: "Montserrat", sans-serif;font-size: 1em;border-radius: 8px;border: 1px solid #ced4da;background-color: rgb(255, 23, 23);color: white;text-align: center;margin-top: 0;}</style>';
             // you are authenticated
             // session_start() creates a random id called session id.
             // and stores in a cookie.
@@ -17,8 +18,14 @@
                 exit ;
             }
         }
-        echo '<script> alert("Kullanıcı Adı veya Parola Hatalı"); </script>';
+        else{
+        echo '<style> #wrong-password{visibility:visible; margin-bottom: 5%;padding: 5%;width: 280px;font-family: "Montserrat", sans-serif;font-size: 1em;border-radius: 8px;border: 1px solid #ced4da;background-color: rgb(255, 23, 23);color: white;text-align: center;margin-top: 0;}</style>';
+        }
+    }else{
+        echo '<style>#wrong-password {display:none;margin-bottom: 5%;padding: 5%;width: 280px;font-family: "Montserrat", sans-serif;font-size: 1em;border-radius: 8px;border: 1px solid #ced4da;background-color: rgb(255, 23, 23);color: white;text-align: center;margin-top: 0;}</style>';
     }
+
+    
     // auto login
   if ( validSession()) {
     $_SESSION["user"] = getUser($id) ;
