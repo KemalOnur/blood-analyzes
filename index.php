@@ -69,33 +69,42 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
     <title>Kan Tahlilleri</title>
     <link rel="stylesheet" href="./styles/app.css">
-    
-</head>
-<body>
-<div id="main-header">
-    <div id="main-header-left">
-        <img src="./images/LogoBeyaz.png" alt="petbilir-logo" height="50" width="200">
-        <h1>Kan Tahlilleri</h1>
-    </div>
-    <div id="main-header-right">
-    <p>Prestige Veteriner Tıp Merkezi için hazırlanmıştır.</p>
-    </div>
-</div>
 
-    <form action="?" method="post">
- 
-    <table>
-          
-            <tr>
-                <th>Kullanıcı ID</th>
-                <th>Kullanıcı Adı Soyadı</th>
-                <th>Hayvan Ad</th>
+</head>
+
+<body>
+    <div id="main-header">
+        <div id="main-header-container">
+            <div id="main-header-left">
+                <img src="./images/LogoBeyaz.png" alt="petbilir-logo" height="50" width="200">
+                <h1>Kan Tahlilleri</h1>
+            </div>
+
+            <div id="main-header-right">
+                <p>Prestige Veteriner Tıp Merkezi için hazırlanmıştır.</p>
+            </div>
+        </div>
+    </div>
+    <div id="table-container">
+    <form class="form-section" action="?" method="post">
+        <table>
+            <tr class="table-row-header">
+                <th>🆔 Kullanıcı ID</th>
+                <th>🧑 Kullanıcı Adı Soyadı</th>
+                <th>🐾 Hayvanın Adı</th>
+                <th>⏏️ Eylemler</th>
             </tr>
             <?php foreach( $users as $user) : ?>
             <tr>
@@ -103,22 +112,24 @@
                 <td><?= $user["nameSurname"] ?></td>
                 <td><?= $user["petName"] ?></td>
                 <td>
-                    <a class="btn" href="?delete=<?= $user["id"] ?>" title="Delete"><i class="fa-solid fa-trash-can"></i></a>
-                    <a class="btn" href="edit.php?id=<?= $user["id"] ?>" title="Edit"><i class="fa-solid fa-pen"></i></i></a>
+                    <a class="btn" href="?delete=<?= $user["id"] ?>" title="Delete"><i
+                            class="fa-solid fa-trash-can"></i></a>
+                    <a class="btn" href="edit.php?id=<?= $user["id"] ?>" title="Edit"><i
+                            class="fa-solid fa-pen"></i></i></a>
                 </td>
             </tr>
-            <?php endforeach ?>    
+            <?php endforeach ?>
             <tr>
-                <td colspan="5">Kullanıcı Sayısı: <?= $rs->rowCount() ?></td>
+                <td class="user-number-row" colspan="5">Kullanıcı Sayısı: <?= $rs->rowCount() ?></td>
             </tr>
             <tr>
-                <td colspan="2"><input type="text" name="id" placeholder="Kullanıcı ID"></td>
-                <td><input type="text" name="nameSurname" placeholder="Kullanıcı Ad Soyad"></td>
-                <td><input type="text" name="petName" placeholder="Hayvan Ad Soyad"></td>
+                <td colspan="2"><input class="input-data" type="text" name="id" placeholder="Kullanıcı ID"></td>
+                <td><input class="input-data" type="text" name="nameSurname" placeholder="Kullanıcı Ad Soyad"></td>
+                <td><input class="input-data" type="text" name="petName" placeholder="Hayvanın Adı"></td>
                 <td>
-                  <button type="submit" class="btn" title="Add">
-                   Kullanıcı Ekle
-                  </button>
+                    <button type="submit" class="add-user-btn" title="Add">
+                        Kullanıcı Ekle
+                    </button>
                 </td>
             </tr>
             <tr>
@@ -128,11 +139,13 @@
             </tr>
         </table>
     </form>
+    </div>
     <?php
        if ( isset($msg)) {
            echo "<p class='msg'>" , $msg, "</p>" ;
        }
     ?>
-       
+
 </body>
+
 </html>

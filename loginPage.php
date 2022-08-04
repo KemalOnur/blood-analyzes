@@ -70,6 +70,7 @@
                             <input type="number" name="id" placeholder="Kullanıcı Numarası">
                             <br>
                             <input type="password" name ="pass" placeholder="Parola">
+                            <p id="wrong-password">Kullanıcı Adı veya Parola Hatalı  :(</p>
                             <button type="submit" title="Giriş Yap">Giriş Yap</button>
                             </form>
                         </div>

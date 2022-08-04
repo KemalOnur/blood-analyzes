@@ -11,7 +11,7 @@ input::-webkit-inner-spin-button
 -webkit-appearance: none;
 margin: 0;
 }
-  
+
 input[type=number] 
 {
 -moz-appearance: textfield;
@@ -72,6 +72,21 @@ input
     font-size: 1em;
     border-radius: 8px;
     border: 1px solid #ced4da;
+}
+
+#wrong-password 
+{
+    margin-bottom: 5%;
+    padding: 5%;
+    width: 280px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    background-color: rgb(255, 23, 23);
+    color: white;
+    text-align: center;
+    margin-top: 0;
 }
 
 input:focus
