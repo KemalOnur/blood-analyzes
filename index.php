@@ -100,12 +100,12 @@
     <div id="table-container">
     <form class="form-section" action="?" method="post">
         <table>
-            <tr class="table-row-header">
-                <th>Kullanıcı ID</th>
-                <th>Kullanıcı Adı Soyadı</th>
-                <th>Hayvanın Adı</th>
-                <th>Eylemler</th>
-            </tr>
+            <div class="table-row-header">
+                <p class="table-row-header-left">Kullanıcı ID</p>
+                <p>Kullanıcı Adı Soyadı</p>
+                <p>Hayvanın Adı</p>
+                <p class="table-row-header-right">Eylemler</p>
+            </div>
             <?php
                 for($i = 0;$i<count($users)-1;$i++){
                     echo '<tr class = "data-row">' ;
