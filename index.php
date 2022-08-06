@@ -100,22 +100,24 @@
     <div id="table-container">
     <form class="form-section" action="?" method="post">
         <table>
-            <div class="table-row-header">
-                <p class="table-row-header-left">Kullanıcı ID</p>
-                <p>Kullanıcı Adı Soyadı</p>
-                <p>Hayvanın Adı</p>
-                <p class="table-row-header-right">Eylemler</p>
+            <div class="table-header-container">
+                <div class="table-row-header">
+                    <div class="table-row-header-left">Kullanıcı ID</div>
+                    <div class="table-row-header-middle-left">Kullanıcı Adı Soyadı</div>
+                    <div class="table-row-header-middle-right">Hayvanın Adı</div>
+                    <div class="table-row-header-right">Eylemler</div>
+                </div>
             </div>
             <?php
                 for($i = 0;$i<count($users)-1;$i++){
                     echo '<tr class = "data-row">' ;
-                    echo '<td class="data">' . $users[$i]["id"] . '</td>' ;
-                    echo '<td class="data">' . $users[$i]["petName"] . '</td>' ;
-                    echo '<td class="data">' . $users[$i]["nameSurname"] . '</td>' ;
-                    echo '<td class="action">' ;
-                    echo '<a class="delete-btn" href="?delete=' . $users[$i]["id"] .  'title="Delete"><i class="fa-solid fa-trash-can"></i></a>'; 
-                    echo ' <a class="edit-btn" href="edit.php?id=' . $users[$i]["id"] . 'title="Edit"><i class="fa-solid fa-pen"></i></i></a>' ;
-                    echo '</td>' ;
+                        echo '<td class="data-left-side">' . $users[$i]["id"] . '</td>' ;
+                        echo '<td class="data-pet-name">' . $users[$i]["petName"] . '</td>' ;
+                        echo '<td class="data-user-name">' . $users[$i]["nameSurname"] . '</td>' ;
+                        echo '<td class="action-right-side">' ;
+                            echo '<a class="delete-btn" href="?delete=' . $users[$i]["id"] .  'title="Delete"><i class="fa-solid fa-trash-can fa-xl"></i></a>'; 
+                            echo ' <a class="edit-btn" href="edit.php?id=' . $users[$i]["id"] . 'title="Edit"><i class="fa-solid fa-pen fa-xl"></i></i></a>' ;
+                        echo '</td>' ;
                     echo '</tr>' ;
                 }
 
@@ -126,29 +128,41 @@
             <div class="new-input-section">
                 <div class="new-input-container">
                     <div>
-                        <input class="input-area" type="text" name="id" placeholder="Kullanıcı ID">
+                        <input class="input-area" type="number" name="id" placeholder="Kullanıcı ID">
                     </div>
                     <div>
                         <input class="input-area" type="text" name="nameSurname" placeholder="Kullanıcı Ad Soyad">
                     </div>
                     <div>
-                        <input class="input-area" type="text" name="petName" placeholder="Hayvan Ad Soyad">
+                        <input class="input-area" type="text" name="petName" placeholder="Hayvan Adı">
+                    </div>
+                    <div>
+                    <select class="input-area-select" name="animal-type" id="animal-type" form="animal-type">
+                        <option value="kedi">Kedi</option>
+                        <option value="kopek">Köpek</option>
+                    </select>
                     </div>
                 </div>
                 <div class="add-data-container">
                     <button type="submit" class="add-button" title="Add">
-                        Kullanıcı Ekle
+                    <i class="fa-solid fa-plus fa-xl"></i>Kullanıcı Ekle
                     </button>
                 </div>
-                <div class="footer-right-container">
-                    <a class="exit-button" href="logout.php">Çıkış Yap</a>
-                </div>
             </div>
-            
     </form>
     </div>
     <footer>
-                <div class="footer-container"><img src="#" alt="prestige-logo"> </div>
+        <div class="footer-section">
+            <div class="footer-container-left"><img src="#" alt="prestige-logo"> </div>
+                <div class="footer-container-right">
+                    <div class="footer-exit-button">
+                    <a class="exit-button" href="logout.php">
+                    <i class="fa-solid fa-power-off fa-xl"></i>
+                    Çıkış Yap
+                    </a>
+                </div>     
+            </div>
+        </div>
     </footer>
     <?php
        if ( isset($msg)) {
