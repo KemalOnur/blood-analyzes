@@ -88,17 +88,44 @@
     <div id="main-header">
         <div id="main-header-container">
             <div id="main-header-left">
+                <a href="https://www.petbilir.com/">
                 <img src="./images/LogoBeyaz.png" alt="petbilir-logo" height="50" width="200">
+                </a>
                 <h1>Kan Tahlilleri</h1>
             </div>
 
             <div id="main-header-right">
-                <p>Prestige Veteriner Tıp Merkezi için hazırlanmıştır.</p>
+                <p><a class="written-prestige" href="http://www.prestige.vet/index.php">Prestige Veteriner Tıp Merkezi</a> için hazırlanmıştır.</p>
             </div>
         </div>
     </div>
     <div id="table-container">
     <form class="form-section" action="?" method="post">
+    <div class = "user-count"> Kullanıcı Sayısı : <?= $rs->rowCount()-1 ?> </div>
+            <div class="new-input-section">
+                <div class="new-input-container">
+                    <div>
+                        <input class="input-area" type="number" name="id" placeholder="Kullanıcı ID">
+                    </div>
+                    <div>
+                        <input class="input-area" type="text" name="nameSurname" placeholder="Kullanıcı Ad Soyad">
+                    </div>
+                    <div>
+                        <input class="input-area" type="text" name="petName" placeholder="Hayvan Adı">
+                    </div>
+                    <div>
+                    <select class="input-area-select" name="animal-type" id="animal-type" form="animal-type">
+                        <option value="kedi">Kedi</option>
+                        <option value="kopek">Köpek</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="add-data-container">
+                    <button type="submit" class="add-button" title="Add">
+                    <i class="fa-solid fa-plus fa-xl"></i>Kullanıcı Ekle
+                    </button>
+                </div>
+            </div>
         <table>
             <div class="table-header-container">
                 <div class="table-row-header">
@@ -124,36 +151,16 @@
                 ?>  
     </table>  
             
-                <div class = "user-count"> Kullanıcı Sayısı : <?= $rs->rowCount()-1 ?> </div>
-            <div class="new-input-section">
-                <div class="new-input-container">
-                    <div>
-                        <input class="input-area" type="number" name="id" placeholder="Kullanıcı ID">
-                    </div>
-                    <div>
-                        <input class="input-area" type="text" name="nameSurname" placeholder="Kullanıcı Ad Soyad">
-                    </div>
-                    <div>
-                        <input class="input-area" type="text" name="petName" placeholder="Hayvan Adı">
-                    </div>
-                    <div>
-                    <select class="input-area-select" name="animal-type" id="animal-type" form="animal-type">
-                        <option value="kedi">Kedi</option>
-                        <option value="kopek">Köpek</option>
-                    </select>
-                    </div>
-                </div>
-                <div class="add-data-container">
-                    <button type="submit" class="add-button" title="Add">
-                    <i class="fa-solid fa-plus fa-xl"></i>Kullanıcı Ekle
-                    </button>
-                </div>
-            </div>
+                
     </form>
     </div>
     <footer>
         <div class="footer-section">
-            <div class="footer-container-left"><img src="#" alt="prestige-logo"> </div>
+            <div class="footer-container-left">
+                <a href="http://www.prestige.vet/index.php">
+                <img src="./images/prestige-logo.jpg" alt="prestige-logo" height="60" width="120"> 
+                </a>
+            </div>
                 <div class="footer-container-right">
                     <div class="footer-exit-button">
                     <a class="exit-button" href="logout.php">

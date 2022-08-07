@@ -34,6 +34,11 @@ input[type="number"] {
   justify-content: space-between;
 }
 
+.written-prestige
+{
+  color: white;
+}
+
 #main-header-left {
   padding-left: 50px;
   width: 30%;
@@ -129,6 +134,34 @@ tr td:first-child {
   background-color: #edf2f4;
 }
 
+
+.data-left-side:hover {
+  text-align: center;
+  min-width: 199px;
+  background-color: #dee4e7;
+}
+
+.data-pet-name:hover {
+  width: 300px;
+  text-align: center;
+  background-color: #dee4e7;
+}
+
+.data-user-name:hover {
+  width: 554px;
+  text-align: center;
+  background-color: #dee4e7;
+}
+
+.action-right-side:hover {
+  width: 300px;
+  display: flex;
+  min-height: 80px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #dee4e7;
+}
+
 .delete-btn {
   display: flex;
   border-radius: 50%;
@@ -175,7 +208,8 @@ tr td:first-child {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding-top: 50px;
+  padding-top: 25px;
+  padding-bottom: 105px;
 }
 
 form {
@@ -273,7 +307,8 @@ td {
 }
 
 .new-input-section {
-  padding-top: 30px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   width: 1350px;
   display: flex;
 }
@@ -317,6 +352,7 @@ td {
 
 .add-button:hover {
   cursor: pointer;
+  background-color: #3e8a68;
 }
 
 input {
@@ -335,6 +371,12 @@ select {
   height: 50px;
   background-color: #d00000;
   border-radius: 10px;
+}
+
+.footer-exit-button:hover
+{
+  background-color: #b60202;
+  cursor: pointer;
 }
 
 .exit-button {
@@ -357,17 +399,17 @@ footer {
   left: 0;
   bottom: 0;
   height: 80px;
-  background-color: #2b2d42;
+  background-color: white;
+  border-top: 1px solid black;
   color: white;
   text-align: center;
 }
 .footer-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 1440px;
-  background-color: #2b2d42;
+  background-color: white;
   display: flex;
   align-items: center;
 }
