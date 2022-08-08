@@ -35,13 +35,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
     <title>Kullanıcı Ayarları</title>
-    <link rel="stylesheet" href="./styles/app.css">
+    <link rel="stylesheet" href="./styles/edit-php.css">
 </head>
 <body>
-    <h1>Kullanıcı Ayarları</h1>
+<div id="main-header">
+        <div id="main-header-container">
+            <div id="main-header-left">
+                <a href="https://www.petbilir.com/">
+                <img src="./images/LogoBeyaz.png" alt="petbilir-logo" height="50" width="200">
+                </a>
+                <h1 class="header-title">Kullanıcı Ayarları</h1>
+            </div>
+
+            <div id="main-header-right">
+                <p><a class="written-prestige" href="http://www.prestige.vet/index.php">Prestige Veteriner Tıp Merkezi</a> için hazırlanmıştır.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-container">
     <form action="" method="post">
-        <table>
+        <table class="table-section">
             <tr>
                 <td>Kullanıcı ID</td>
                 <td>
@@ -63,18 +83,39 @@
             </tr>
             <tr>
                 <td>
-                   <button type="submit" class="btn">
+                   <button type="submit" class="submit-btn">
                    Değişiklikleri Kaydet
                    </button>
                 </td>
                 <td>
-                    <a class="btn" href="addAnalysis.php?id=<?= $user["id"] ?>" title="Tahlil Ekle">Tahlil Ekle</a>
-                    <a class="btn" href="Analyzes.php?id=<?= $user["id"] ?>" title="Tahlilleri gör">Tahlilleri gör</a>
+                    <a class="add-btn" href="addAnalysis.php?id=<?= $user["id"] ?>" title="Tahlil Ekle">Tahlil Ekle</a>
+                    <a class="show-btn" href="Analyzes.php?id=<?= $user["id"] ?>" title="Tahlilleri gör">Tahlilleri gör</a>
+                    <a class="delete-btn" href="Analyzes.php?id=<?= $user["id"] ?>" title="Tahlilleri gör">Kullanıcıyı Sik</a>
 
                 </td>
             </tr>
             
         </table>
     </form>
+    </div>
+    <footer>
+        <div class="footer-section">
+            <div class="footer-container-left">
+                <a href="http://www.prestige.vet/index.php">
+                <img src="./images/prestige-logo.jpg" alt="prestige-logo" height="60" width="120"> 
+                </a>
+            </div>
+            <a class="exit-button" href="index.php">
+                <div class="footer-container-right">
+                    <div class="footer-exit-button">
+                    
+                    <i class="fa-solid fa-backward fa-xl"></i>
+                    Geri Dön
+                    
+                </div>
+                </a>     
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

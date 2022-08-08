@@ -27,6 +27,7 @@ input[type="number"] {
   justify-content: center;
 }
 
+
 #main-header-container {
   width: 1440px;
   display: flex;
@@ -48,6 +49,12 @@ input[type="number"] {
   justify-content: space-between;
   color: white;
   font-family: "Montserrat", sans-serif;
+}
+
+.header-title
+{
+  padding-left: 15px;
+  white-space: nowrap;
 }
 
 #main-header-right {
@@ -210,6 +217,19 @@ tr td:first-child {
   width: 100%;
   padding-top: 25px;
   padding-bottom: 105px;
+}
+
+.table-property
+{
+padding-top: 25px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.table-header-container
+{
+width: 100%;
 }
 
 form {

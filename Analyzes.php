@@ -30,7 +30,20 @@ $id = $_GET["id"] ;
     <link rel="stylesheet" href="./styles/app.css">
 </head>
     <body>
-        <h1>Tahliller</h1>
+    <div id="main-header">
+        <div id="main-header-container">
+            <div id="main-header-left">
+                <a href="https://www.petbilir.com/">
+                <img src="./images/LogoBeyaz.png" alt="petbilir-logo" height="50" width="200">
+                </a>
+                <h1>Tahliller</h1>
+            </div>
+
+            <div id="main-header-right">
+                <p><a class="written-prestige" href="http://www.prestige.vet/index.php">Prestige Veteriner Tıp Merkezi</a> için hazırlanmıştır.</p>
+            </div>
+        </div>
+    </div>
         <table>
             <th>Kullanici ID</th>
             <th>Tarih</th>
@@ -47,11 +60,23 @@ $id = $_GET["id"] ;
             <tr>
                 <td colspan="5">Tahlil Sayisi: <?= $stmt->rowCount() ?></td>
             </tr>
-            <tr>
-                <td>
-                    <a class="btn" href="logout.php">Çıkış Yap</a>
-                </td>
-            </tr>
         </table>
+        <footer>
+        <div class="footer-section">
+            <div class="footer-container-left">
+                <a href="http://www.prestige.vet/index.php">
+                <img src="./images/prestige-logo.jpg" alt="prestige-logo" height="60" width="120"> 
+                </a>
+            </div>
+                <div class="footer-container-right">
+                    <div class="footer-exit-button">
+                    <a class="exit-button" href="logout.php">
+                    <i class="fa-solid fa-power-off fa-xl"></i>
+                    Çıkış Yap
+                    </a>
+                </div>     
+            </div>
+        </div>
+    </footer>
     </body>
 </html>

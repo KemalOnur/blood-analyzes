@@ -35,7 +35,20 @@
     <link rel="stylesheet" href="./styles/app.css">
 </head>
 <body>
-    <h1>Kan Tahlili Ekle</h1>
+<div id="main-header">
+        <div id="main-header-container">
+            <div id="main-header-left">
+                <a href="https://www.petbilir.com/">
+                <img src="./images/LogoBeyaz.png" alt="petbilir-logo" height="50" width="200">
+                </a>
+                <h1>Kan Tahlili Ekle</h1>
+            </div>
+
+            <div id="main-header-right">
+                <p><a class="written-prestige" href="http://www.prestige.vet/index.php">Prestige Veteriner Tıp Merkezi</a> için hazırlanmıştır.</p>
+            </div>
+        </div>
+    </div>
     <form action="?" method="POST">
     <table>
         <tr>
@@ -87,5 +100,23 @@
         </tr>
     </table> 
     </form>   
+    <footer>
+        <div class="footer-section">
+            <div class="footer-container-left">
+                <a href="http://www.prestige.vet/index.php">
+                <img src="./images/prestige-logo.jpg" alt="prestige-logo" height="60" width="120"> 
+                </a>
+            </div>
+                <div class="footer-container-right">
+                <a class="exit-button" href="logout.php">
+                    <div class="footer-exit-button">
+                    <i class="fa-solid fa-backward fa-xl"></i>
+                    Geri Dön
+                    
+                </div>
+                </a>     
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
