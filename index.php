@@ -11,31 +11,34 @@
        exit ; 
    }
 
-   // DELETE a Game
+   // DELETE a User
    if ( isset($_GET["delete"])) {
        $id = $_GET["delete"] ;
        $user = getUser($id) ;
        try {
+
           $stmt = $db->prepare("DELETE FROM users where id = ?") ;
           $stmt->execute([$id]) ;
           $msg = "{$user["nameSurname"]} Silindi" ;
           header("Location: index.php") ;
        } catch(PDOException $ex) {
-            gotoErrorPage();
+            $ex->getMessage();
+            echo $ex ;
+            echo $id ;
        } 
    }
 
    // INSERT a user
-   if ( !empty($_POST)) {
+   if ( !empty($_POST)&&!isset($_POST['input'])) {
        extract($_POST) ;
        try {
         $userType = "normal" ;
         $randomNum = rand(10000000,99999999);
-        $stmt = $db->prepare("INSERT INTO users (id,userType,nameSurname,petName, password) VALUES (?,?,?,?,?)" ) ;
-        $stmt->execute([$id,$userType, $nameSurname,$petName,$randomNum]) ;
+        $stmt = $db->prepare("INSERT INTO users (id,userType,nameSurname,petName,animalType, password) VALUES (?,?,?,?,?,?)" ) ;
+        $stmt->execute([$id,$userType, $nameSurname,$petName,$animalType,$randomNum]) ;
         $msg = "$nameSurname (" . $db->lastInsertId() . ") Eklendi" ; 
        } catch(PDOException $ex) {
-         gotoErrorPage();
+        echo $ex->getMessage();
        
         } 
     
@@ -53,8 +56,8 @@
    }
    // Read all analyzes
    try{
-    $rs = $db->query("select * from analyzes") ;
-    $analyzes = $rs->fetchAll(PDO::FETCH_ASSOC) ;
+    $rss = $db->query("select * from analyzes") ;
+    $analyzes = $rss->fetchAll(PDO::FETCH_ASSOC) ;
    } catch( PDOException $ex) {
         gotoErrorPage();
    }
@@ -78,9 +81,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Kan Tahlilleri</title>
     <link rel="stylesheet" href="./styles/app.css">
+   
 
 </head>
 
@@ -100,6 +104,7 @@
         </div>
     </div>
     <div id="table-container">
+    <div> <input type="text" name="search-text" id="search-text" placeholder="Kullanici adina gore arama yapiniz"></div>
     <form class="form-section" action="?" method="post">
     <div class = "user-count"> Kullanıcı Sayısı : <?= $rs->rowCount()-1 ?> </div>
             <div class="new-input-section">
@@ -114,9 +119,9 @@
                         <input class="input-area" type="text" name="petName" placeholder="Hayvan Adı">
                     </div>
                     <div>
-                    <select class="input-area-select" name="animal-type" id="animal-type" form="animal-type">
+                    <select class="input-area-select" name="animalType" id="animal-type">
                         <option value="kedi">Kedi</option>
-                        <option value="kopek">Köpek</option>
+                        <option value="köpek">Köpek</option>
                     </select>
                     </div>
                 </div>
@@ -126,6 +131,7 @@
                     </button>
                 </div>
             </div>
+
         <table>
             <div class="table-header-container">
                 <div class="table-row-header">
@@ -135,24 +141,11 @@
                     <div class="table-row-header-right">Eylemler</div>
                 </div>
             </div>
-            <?php
-                for($i = 0;$i<count($users)-1;$i++){
-                    echo '<tr class = "data-row">' ;
-                        echo '<td class="data-left-side">' . $users[$i]["id"] . '</td>' ;
-                        echo '<td class="data-pet-name">' . $users[$i]["petName"] . '</td>' ;
-                        echo '<td class="data-user-name">' . $users[$i]["nameSurname"] . '</td>' ;
-                        echo '<td class="action-right-side">' ;
-                            echo '<a class="delete-btn" href="?delete=' . $users[$i]["id"] .  'title="Delete"><i class="fa-solid fa-trash-can fa-xl"></i></a>'; 
-                            echo ' <a class="edit-btn" href="edit.php?id=' . $users[$i]["id"] . 'title="Edit"><i class="fa-solid fa-pen fa-xl"></i></i></a>' ;
-                        echo '</td>' ;
-                    echo '</tr>' ;
-                }
-
-                ?>  
-    </table>  
-            
+            <div id = "searchresult">
                 
-    </form>
+            </div>
+    </table>             
+</form> 
     </div>
     <footer>
         <div class="footer-section">
@@ -176,7 +169,35 @@
            echo "<p class='msg'>" , $msg, "</p>" ;
        }
     ?>
+<script type ="text/javascript">
+    $(document).ready(function(){
 
+        var input = $(this).val() ;
+                $.ajax({
+                    url: "livesearch.php",
+                    method: "POST",
+                    data:{input:input},
+
+                    success:function(response){
+                       $("#searchresult").html(response);
+                    }
+                });     
+
+        $("#search-text").keyup(function(){
+            var input = $(this).val() ;
+                $.ajax({
+
+                    url: "livesearch.php",
+                    method: "POST",
+                    data:{input:input},
+
+                    success:function(response){
+                       $("#searchresult").html(response);
+                    }
+                });     
+        }) ;
+    }) ;
+</script>
 </body>
 
 </html>

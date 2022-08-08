@@ -3,6 +3,7 @@
 $dsn = "mysql:host=localhost;port=3306;dbname=test;charset=utf8mb4" ;
 $user = "root" ;
 $pass = "" ;
+$con = mysqli_connect("localhost","root","","test") ;
 
 try {
   $db = new PDO($dsn, $user, $pass) ;
