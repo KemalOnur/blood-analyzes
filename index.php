@@ -36,7 +36,7 @@
         $randomNum = rand(10000000,99999999);
         $stmt = $db->prepare("INSERT INTO users (id,userType,nameSurname,petName,animalType, password) VALUES (?,?,?,?,?,?)" ) ;
         $stmt->execute([$id,$userType, $nameSurname,$petName,$animalType,$randomNum]) ;
-        $msg = "$nameSurname (" . $db->lastInsertId() . ") Eklendi" ; 
+        $msg = "$nameSurname Eklendi" ; 
        } catch(PDOException $ex) {
         echo $ex->getMessage();
        
