@@ -25,9 +25,15 @@
                         $id = $row['id'];
                         $nameSurname = $row['nameSurname'];
                         $petName = $row['petName'];
+                        $animalType = $row['animalType'];
                         echo '<tr class = "data-row">' ;
                         echo '<td class="data-left-side">' . $id . '</td>' ;
                         echo '<td class="data-pet-name">' . $nameSurname . '</td>' ;
+                        if($animalType=="kopek"){
+                            echo '<td class="animal-img"><img src="./images/kopek.png" alt="kopek" width="50" height="50">' ;
+                        }else if ($animalType=="kedi"){
+                            echo '<td class="animal-img"><img src="./images/kedi.png" alt="kedi" width="50" height="50">' ;
+                        }
                         echo '<td class="data-user-name">' . $petName . '</td>' ;
                         echo '<td class="action-right-side">' ;
                                 echo '<a class="delete-btn" href="?delete=' . $id .'"title="Delete"><i class="fa-solid fa-trash-can fa-xl"></i></a>'; 

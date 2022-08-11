@@ -132,7 +132,7 @@
             <div>
                 <select class="input-area-select" name="animalType" id="animal-type">
                     <option value="kedi">Kedi</option>
-                    <option value="köpek">Köpek</option>
+                    <option value="kopek">Köpek</option>
                 </select>
             </div>
         </div>
