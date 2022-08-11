@@ -9,6 +9,7 @@
     }
    
     $id = $_GET["id"] ;
+    $user = getUser($id) ;
     
     if ( !empty($_POST)) {
         extract($_POST) ;
@@ -64,6 +65,9 @@
                         <h3>Tahlil Eklenen ID</h3>
                         <?= $id ?>
                         <input type="hidden" name="id" value="<?= $id?>">
+                        <div>Kullanıcı Adi Soyadi <?= $user["nameSurname"]?> </div>
+                        <div>Hayvanin Adi <?= $user["petName"]?> </div>
+                        <div>Hayvanin Turu <?= $user["animalType"]?> </div>
                     </div>
                     <div class="date-calendar">
                         <input class="calendar" type="date" name="date">
