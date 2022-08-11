@@ -65,8 +65,8 @@
                         <?= $id ?>
                         <input type="hidden" name="id" value="<?= $id?>">
                     </div>
-                    <div>
-                        <input type="date" name="date">
+                    <div class="date-calendar">
+                        <input class="calendar" type="date" name="date">
                     </div>
                 </div>
                 <div>
