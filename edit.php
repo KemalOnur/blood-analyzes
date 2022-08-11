@@ -61,41 +61,59 @@
     
     <div class="form-container">
     <form action="" method="post">
-        <table class="table-section">
-            <tr>
-                <td>Kullanıcı ID</td>
-                <td>
+        <div class="table-section">
+
+            <div class="user-id-section">
+                <div class="user-id-header-container">
+                    <h2 class="user-id-header">Kullanıcı ID</h2>
+                </div>
+                <div class="user-id-count-container">
                    <?= $user["id"] ?>
                    <input type="hidden" name="id" value="<?= $user["id"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>Ad Soyad</td>
-                <td>
-                    <input type="text" name="nameSurname" value="<?= $user["nameSurname"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>Hayvan Ad</td>
-                <td>
-                    <input type="text" name="petName" value="<?= $user["petName"] ?>"> 
-                </td>
-            </tr>
-            <tr>
-                <td>
+                </div>
+            </div>
+
+            <div class="user-name-section">
+                <div class="user-name-header-container">
+                    <h2 class="user-name-header">Kullanıcı Adı ve Soyadı</h2>
+                </div>
+                <div class="user-name-count-container">
+                    <input class="user-name-input-container" type="text" name="nameSurname" value="<?= $user["nameSurname"] ?>">
+                </div>
+            </div>
+            <div class="pet-name-section">
+                <div class="pet-name-header-container">
+                    <h2 class="pet-name-header">Hayvan Ad</h2>
+                </div>
+                <div class="pet-name-count-container">
+                    <input class="pet-name-input-container" type="text" name="petName" value="<?= $user["petName"] ?>"> 
+                </div>
+            </div>
+            <div>
+                <div class="save-button-section">
                    <button type="submit" class="submit-btn">
+                   <i class="fa-solid fa-floppy-disk"></i>
                    Değişiklikleri Kaydet
                    </button>
-                </td>
-                <td>
-                    <a class="add-btn" href="addAnalysis.php?id=<?= $user["id"] ?>" title="Tahlil Ekle">Tahlil Ekle</a>
-                    <a class="show-btn" href="Analyzes.php?id=<?= $user["id"] ?>" title="Tahlilleri gör">Tahlilleri gör</a>
-                    <a class="delete-btn" href="Analyzes.php?id=<?= $user["id"] ?>" title="Tahlilleri gör">Kullanıcıyı Sik</a>
-
-                </td>
-            </tr>
+                </div> 
+                <div class="action-buttons">
+                    <a class="add-btn" href="addAnalysis.php?id=<?= $user["id"] ?>" title="Tahlil Ekle">
+                    <i class="fa-solid fa-plus fa-xl"></i>
+                    Tahlil Ekle
+                    </a>
+                    <a class="show-btn" href="Analyzes.php?id=<?= $user["id"] ?>" title="Tahlilleri gör">
+                    <i class="fa-solid fa-eye"></i>
+                    Tahlilleri gör
+                    </a>
+                    <a class="delete-btn" href="Analyzes.php?id=<?= $user["id"] ?>" title="Tahlilleri gör">
+                    <i class="fa-solid fa-trash"></i>
+                    Kullanıcıyı Sil
+                    </a>
+                </div>
+                 
+            </div>
             
-        </table>
+        </div>
     </form>
     </div>
     <footer>
