@@ -148,6 +148,7 @@
             <div class="table-row-header">
                 <div class="table-row-header-left">Kullanıcı ID</div>
                 <div class="table-row-header-middle-left">Kullanıcı Adı Soyadı</div>
+                <div class="table-row-header-middle">Hayvanın Türü</div>
                 <div class="table-row-header-middle-right">Hayvanın Adı</div>
                 <div class="table-row-header-right">Eylemler</div>
             </div>

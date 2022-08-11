@@ -116,57 +116,35 @@ tr td:first-child {
 
 .data-left-side {
   text-align: center;
-  min-width: 199px;
-  background-color: #edf2f4;
+  min-width: 148px;
+  background-color: #FFFFFF;
 }
 
 .data-pet-name {
-  width: 300px;
+  width: 348px;
   text-align: center;
-  background-color: #edf2f4;
+  background-color: #FFFFFF;
+}
+
+.animal-img
+{
+  width:248px;
 }
 
 .data-user-name {
-  width: 554px;
+  width: 248px;
   text-align: center;
-  background-color: #edf2f4;
+  background-color: #FFFFFF;
 }
 
 .action-right-side {
-  width: 300px;
+  width: 348px;
   display: flex;
   min-height: 80px;
   justify-content: space-around;
   align-items: center;
-  background-color: #edf2f4;
-}
-
-
-.data-left-side:hover {
-  text-align: center;
-  min-width: 199px;
-  background-color: #dee4e7;
-}
-
-.data-pet-name:hover {
-  width: 300px;
-  text-align: center;
-  background-color: #dee4e7;
-}
-
-.data-user-name:hover {
-  width: 554px;
-  text-align: center;
-  background-color: #dee4e7;
-}
-
-.action-right-side:hover {
-  width: 300px;
-  display: flex;
-  min-height: 80px;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #dee4e7;
+  background-color: #FFFFFF;
+  margin:0;
 }
 
 .delete-btn {
@@ -247,7 +225,7 @@ th {
 
 .table-row-header-left {
   border-radius: 10px 0px 0px 0px;
-  width: 200px;
+  width: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -258,7 +236,7 @@ th {
 
 .table-row-header-right {
   border-radius: 0px 10px 0px 0px;
-  width: 300px;
+  width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -268,7 +246,18 @@ th {
 }
 
 .table-row-header-middle-right {
-  width: 550px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid #edf2f4;
+  font-size: 18px;
+  color: #2b2d42;
+}
+
+.table-row-header-middle
+{
+  width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,7 +267,7 @@ th {
 }
 
 .table-row-header-middle-left {
-  width: 300px;
+  width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -507,7 +496,6 @@ width: 1350px;
   height: 500px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .add-analysis-form
