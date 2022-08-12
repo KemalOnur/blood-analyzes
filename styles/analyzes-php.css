@@ -76,6 +76,11 @@ td {
   border-style: none solid solid none;
 }
 
+.analysis-report
+{
+    text-align: center;
+}
+
 tr {
   height: 80px;
 }
@@ -223,7 +228,7 @@ tr td:first-child {
   height: 80px;
 }
 
-#table-container {
+.table-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -545,3 +550,4 @@ height: 100%;
 {
   width: 1350px;
 }
+

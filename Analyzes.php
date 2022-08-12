@@ -26,8 +26,12 @@ $id = $_GET["id"] ;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Tahliller</title>
-    <link rel="stylesheet" href="./styles/app.css">
+    <link rel="stylesheet" href="./styles/analyzes-php.css">
 </head>
     <body>
     <div id="main-header">
@@ -44,23 +48,25 @@ $id = $_GET["id"] ;
             </div>
         </div>
     </div>
-        <table>
-            <th>Kullanici ID</th>
-            <th>Tarih</th>
+    <div class="table-container">
+        <table class="analysis-table-unique">
             <?php foreach( $analyzes as $analysis) : ?>
             <tr>
-                <td><?= $analysis['id'] ?></td>
-                <td><?= $analysis['date'] ?></td>
-                <td>
-                    <a class="btn" href="Analysis.php?id=<?=$analysis["id"]?>&date=<?=$analysis["date"]?>">Tahlili gor</a>
+                <td class="analysis-report"><h3>ID: </h3><?= $analysis['id'] ?></td>
+                <td class="analysis-report"><h3>Tarih: </h3> <?= $analysis['date'] ?></td>
+                <td class="analysis-report">
+                    <a class="btn" href="Analysis.php?id=<?=$analysis["id"]?>&date=<?=$analysis["date"]?>">
+                    <i class="fa-solid fa-eye fa-2xl"></i>
+                    </a>
                 </td>
                 
             </tr>
             <?php endforeach ?>    
             <tr>
-                <td colspan="5">Tahlil Sayisi: <?= $stmt->rowCount() ?></td>
+                <td class="analysis-report" colspan="5">Tahlil Sayisi: <?= $stmt->rowCount() ?></td>
             </tr>
         </table>
+    </div>
         <footer>
         <div class="footer-section">
             <div class="footer-container-left">

@@ -26,20 +26,20 @@
                         $nameSurname = $row['nameSurname'];
                         $petName = $row['petName'];
                         $animalType = $row['animalType'];
-                        echo '<tr class = "data-row">' ;
-                        echo '<td class="data-left-side">' . $id . '</td>' ;
-                        echo '<td class="data-pet-name">' . $nameSurname . '</td>' ;
+                        echo '<div class = "data-row">' ;
+                        echo '<div class="data-left-side">' . $id . '</div>' ;
+                        echo '<div class="data-pet-name">' . $nameSurname . '</div>' ;
                         if($animalType=="kopek"){
-                            echo '<td class="animal-img"><img src="./images/kopek.png" alt="kopek" width="50" height="50">Köpek</td>' ;
+                            echo '<div class="animal-img"><img src="./images/kopek.png" alt="kopek" width="50" height="50">Köpek</div>' ;
                         }else if ($animalType=="kedi"){
-                            echo '<td class="animal-img"><img src="./images/kedi.png" alt="kedi" width="50" height="50">Kedi</td>' ;
+                            echo '<div class="animal-img"><img src="./images/kedi.png" alt="kedi" width="50" height="50">Kedi</div>' ;
                         }
-                        echo '<td class="data-user-name">' . $petName . '</td>' ;
-                        echo '<td class="action-right-side">' ;
+                        echo '<div class="data-user-name">' . $petName . '</div>' ;
+                        echo '<div class="action-right-side">' ;
                                 echo '<a class="delete-btn" href="?delete=' . $id .'"title="Delete"><i class="fa-solid fa-trash-can fa-xl"></i></a>'; 
                                 echo ' <a class="edit-btn" href="edit.php?id=' . $id . ' "title="Edit"><i class="fa-solid fa-pen fa-xl"></i></i></a>' ;
-                            echo '</td>' ;
-                        echo '</tr>';
+                            echo '</div>' ;
+                        echo '</div>';
                     }
                 }
                 ?> 
