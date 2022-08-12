@@ -155,7 +155,7 @@
         </div>
         <div class="search-result-section">
             <div id="searchresult">
-
+                
             </div>
         </div>
     </table>

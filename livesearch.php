@@ -26,6 +26,7 @@
                         $nameSurname = $row['nameSurname'];
                         $petName = $row['petName'];
                         $animalType = $row['animalType'];
+                        if($row['userType']=="normal"){
                         echo '<div class = "data-row">' ;
                         echo '<div class="data-left-side">' . $id . '</div>' ;
                         echo '<div class="data-pet-name">' . $nameSurname . '</div>' ;
@@ -40,6 +41,7 @@
                                 echo ' <a class="edit-btn" href="edit.php?id=' . $id . ' "title="Edit"><i class="fa-solid fa-pen fa-xl"></i></i></a>' ;
                             echo '</div>' ;
                         echo '</div>';
+                    }
                     }
                 }
                 ?> 
