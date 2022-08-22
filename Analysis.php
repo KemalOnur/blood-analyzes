@@ -71,8 +71,8 @@ if( !validSession()) {
             <td><?= $analysis["var18"] ?></td>
         </tr>
         <tr>
-            <td colspan="3" >
-            <button onClick="this.style.visibility='hidden'; window.print();this.style.visibility='visible';" class="btn">Yazdır</button>
+            <td colspan="3" onClick="this.style.visibility='hidden'; window.print();this.style.visibility='visible';" >
+            <button class="btn">Yazdır</button>
             </td>
         </tr>
     </table> 
